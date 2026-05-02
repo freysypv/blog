@@ -38,3 +38,11 @@ Run the startproject command to create the project settings
 ## step 7
  window: python manage.py runserver
  
+## step 8
+Django command to create apps:
+
+Windows: python manage.py startapp NAME_OF_THE_APP
+Mac OS: python3 manage.py startapp NAME_OF_THE_APP
+
+Django command to verify errors:
+Python3 manage.py check
