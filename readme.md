@@ -46,3 +46,14 @@ Mac OS: python3 manage.py startapp NAME_OF_THE_APP
 
 Django command to verify errors:
 Python3 manage.py check
+
+
+## step 9
+Both os: prthon manage.py startopp mane_of_the _app
+
+## models in Django
+
+When we finish a model structure we need to run  these comand in order:
+
+1. python manage.py makemigration
+2. python manage.py migrate

@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
+{%load static%}
 
-{% block title %}
 
+{% block css %}
+ <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    
+{% endblock %}
+
+
+{% block title %} 
+   About me
  
  {% endblock %}
 
@@ -12,4 +20,8 @@
     <p> My name is Freysy Pena Veras. I was born in the Dominican Republic,
          And grow up in a mountainous region of the north side of the island.
          I am a junior Full stack developer in training. </p>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/about.js' %}"></script>
 {% endblock %}
