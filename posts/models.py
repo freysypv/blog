@@ -16,7 +16,7 @@ class Post(models.Model): # oop (object oriented programing)
     def __str__(self): # to string method
         return f"{self.id} - {self.title} by {self.author}"
     
-    def get_absolute_url(self): 
+    def get_absolute_url(self): # Redirect a user when we executer a Post request
         return reverse("post_detail", args=[self.id]) 
         
         
