@@ -36,7 +36,7 @@ Run the startproject command to create the project settings
 
 
 ## step 7
- window: python manage.py runserver
+ window: python manage.py runserver 
  
 ## step 8
 Django command to create apps:
