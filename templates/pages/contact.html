@@ -10,23 +10,28 @@
 
 {% block content %}
 
- <h1>Contact me!</h1>
- <p>Feel free to reach out any time!</p>
+ <body class="bg-secondary opacity-45">
+        <div  class="text-light text-center">  
+            <h1>Contact me!</h1>
+            <p>Feel free to reach out any time!</p>
+        </div>
+  
     {% if messages %}
+
         <div class="messages">
             {% for message in messages %}
                 <div class="alert alert-{{ message.tags }}">{{ message }}</div>
             {% endfor %}
         </div>
     {% endif %}
- <div class ="contact-container card text-bg-primary mb-3 p-2 opacity-45" style="max-width: 50rem; max-height: 48rem;">
-    <div class = "contact-info">
+ <div class ="contact-container bg-light mb-3 p-3 " style="max-width: 50rem; max-height: 48rem;">
+    <div class = "contact-info ">
         <h2>Get in Touch</h2>
         <p><strong>Email:</strong> example@email.com</p>
         <p><strong>Phone:</strong> (123) 456-7890</p>
         <p><strong>Address:</strong> 123 main street, P-town, State, Zip Code</p>
     </div>
-    <div class = "contact-form  card text-bg-secondary mb-3 mt-4 text-center " style="max-width: 48rem;">
+    <div class = "contact-form bg-light card  mb-3 mt-4 text-center " style="max-width: 48rem;">
         <h2>Send a Message</h2>
         <form method="post">   
             
@@ -46,4 +51,5 @@
 
     </div>
 
+ </body>
 {% endblock %}
