@@ -17,22 +17,30 @@
         </li>
          <li class="nav-item">
           <a class="nav-link" href="{% url 'post_list' %}">Posts</a>
-           </li>
-         <li class="nav-item">
-          <a class="nav-link" href="{% url 'post_new' %}">Post_new</a>
-          <div class="">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'login' %}">Log In</a>
+           </li> 
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'post_new' %}">Post_new</a>
+            </li>
+          {% endif %}
+          
+            {% if user.is_authenticated %}
+                <li class="na-item">
+                  <span class="badge text-bg-info">{{ user.username}}</span>
                 <li class="nav-item">
                 <form action="{% url 'logout' %}" method="post">
                   {% csrf_token %}
                   <input type="submit" value="log Out" class="nav-link">
                 </form>
               </ul>
-            </div>
+              {% else %}
+              
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">Log In</a>
+            {% endif%}
          
       </ul>
     </div>

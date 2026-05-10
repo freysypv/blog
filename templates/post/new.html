@@ -1,4 +1,5 @@
 {%extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}
     Create Post
@@ -8,7 +9,7 @@
     <h1>Create New Post</h1>
     <form method="post" class="form-control form-control-lg bg-secondary p-2 m-2 mt-4 pt-4 Sopacity-20 text-center text-light w-80" placeholder=".form-control-lg" >
         {% csrf_token %}
-        {{ form.as_p}}
+        {{ form|crispy}}
         <input type="submit" value="Create"  class="btn btn-success">
     </form>
 {% endblock %}
