@@ -9,6 +9,7 @@
     <form method="post" class="form-control form-control-lg bg-secondary pt-4 mt-4 opacity-20" placeholder=".form-control-lg">
         {% csrf_token %}
         {{ form.as_p}}
+        
         <input type="submit" value="Edit" class="btn btn-success opacity-20">
 
         <a href="{% url 'post_detail' post.id%}" class="btn btn-danger">Cancel</a>

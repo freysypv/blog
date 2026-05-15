@@ -11,7 +11,8 @@
     
         <ul>
             {% for post in posts %}
-                <li>{{post.id}} - {{ post.title}}</li>
+                <li>{{post.id}} - {{ post.title}}</li><br>
+                <span><strong>Status: {{post.status }}</strong></span><br>
                 <a href="{% url 'post_detail' post.id %}">Continue Reading</a>
             {% endfor %}
 

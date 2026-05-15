@@ -3,3 +3,12 @@
 -Create a new gjango app called 'post
 -Make sure that it has all the correct files 
 -Register the new app in settiong create the url.py and register on the paret urls.py (the one from config )
+
+# mini Challenge 2 (FSDI 113)- PostArchivedLISTVIEW and PostDraftlistView
+
+create two new class based views called ** PostArchivedListView** and ** PostDraftListView
+
+
+
+
+
