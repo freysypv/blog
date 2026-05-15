@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
+ <body class="bg-secondary-subtle">
     <h1>Title: {{ single_post.title }}</h1>
     <h3> Subtitle:{{ single_post.Subtitle}}</h3>
     <span><strong>Aurthor: {{single_post.author}}</strong></span>
@@ -15,4 +16,6 @@
      <hr/>
     <a href="{% url 'post_edit' single_post.id %}" class="bnt btn-secondary">Edit post</a>
     <a href="{% url 'post_delete' single_post.id %}" class="btn btn-danger">Delete post</a>
+
+ </body>
 {% endblock %}

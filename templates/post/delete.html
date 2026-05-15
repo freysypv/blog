@@ -5,14 +5,19 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Delete Post</h2>
-    <p>Are you sure you want to delete <strong>"{{ post.title}}"</strong>?</p>
-    <form method="post" class="form-control">
-        {% csrf_token %}
-        <input type="submit" value="Confirm" class="btn btn-danger">
+    <body class="bg-secondary-subtle">
 
-        <a href="{% url 'post_detail' post.id %}" class="btn btn-success">Cancel</a>
-    </form>
+        <h2>Delete Post</h2>
+        <p>Are you sure you want to delete <strong>"{{ post.title}}"</strong>?</p>
+        <form method="post" class="form-control">
+            {% csrf_token %}
+            <input type="submit" value="Confirm" class="btn btn-danger">
+
+            <a href="{% url 'post_detail' post.id %}" class="btn btn-success">Cancel</a>
+        </form>
+        
+    </body>
+   
       
 
 {% endblock %}

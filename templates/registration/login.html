@@ -6,10 +6,12 @@
 {% endblock %}
 
 {% block content %}
+ <body class="bg-secondary-subtle">
     <h1>log in</h1>
     <form method="post">
         {% csrf_token %}
         {{ form|crispy}}
         <input type="submit" value="LOG IN" class="btn btn-success">
     </form>
+ </body>
 {% endblock %}

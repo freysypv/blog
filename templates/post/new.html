@@ -6,10 +6,13 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Create New Post</h1>
-    <form method="post" class="form-control form-control-lg bg-secondary p-2 m-2 mt-4 pt-4 Sopacity-20 text-center text-light w-80" placeholder=".form-control-lg" >
-        {% csrf_token %}
-        {{ form|crispy}}
-        <input type="submit" value="Create"  class="btn btn-success">
-    </form>
+    <body class="bg-secondary-subtle"></body>
+        <h1>Create New Post</h1>
+        <form method="post" class="form-control form-control-lg bg-secondary p-2 m-2 mt-4 pt-4 Sopacity-20 text-center text-light w-80" placeholder=".form-control-lg" >
+            {% csrf_token %}
+            {{ form|crispy}}
+            <input type="submit" value="Create"  class="btn btn-success">
+        </form>
+
+    </body>
 {% endblock %}

@@ -1,9 +1,10 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'home'%}">Blog</a>
+    <a class="navbar-brand" href="{% url 'home' %}">Blog</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -15,46 +16,50 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'contact' %}">Contact</a>
         </li>
-         <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" href="{% url 'post_list' %}">Posts</a>
-           </li> 
+        </li> 
+        {% if user.is_authenticated %}
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'post_drafts' %}">Drafts</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'post_archived' %}">Archived</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'post_new' %}">New Post</a>
+          </li>
+        {% endif %}
+        
+        <li class="nav-item">
           <a class="nav-link" href="{% url 'post_list' %}">Published</a>
-           </li> 
-          {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'post_drafts' %}">Draft</a>
-            </li> 
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'post_archived' %}">Archived</a>
-            </li> 
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'post_new' %}">Post_new</a>
-            </li>
-          {% endif %}
-          
-          {% if user.is_authenticated %}
-                <li class="na-item">
-                  <span class="badge text-bg-info">{{ user.username}}</span>
-                <li class="nav-item">
-                <a class="nav-link" href="{% url 'password_change' %}"> Change Password</a>
-                </li> 
-                <li class="nav-item">
-                <form action="{% url 'logout' %}" method="post">
-                  {% csrf_token %}
-                  <input type="submit" value="log Out" class="nav-link">
-                </form>
-              </ul>
-          {% else %}
-              
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'login' %}">Log In</a>
-          {% endif%}
-         
+        </li> 
       </ul>
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+        {% if user.is_authenticated %}
+          <li class="nav-item me-2">
+            <span class="badge text-bg-info">{{ user.username }}</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'password_change' %}">Change Password</a>
+          </li> 
+          <li class="nav-item">
+            <form action="{% url 'logout' %}" method="post" class="d-inline">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-link nav-link py-0">Log Out</button>
+            </form>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+          </li>
+        {% endif %}
+      </ul>
+
     </div>
   </div>
 </nav>

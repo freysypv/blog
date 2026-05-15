@@ -5,18 +5,21 @@
 {% endblock %}
 
 {% block content %}
-    <div class="card p-2 m-2">
-        <h1 class="text-center">All Posts</h1>
-        
-    
-        <ul>
-            {% for post in posts %}
-                <li>{{post.id}} - {{ post.title}}</li><br>
-                <span><strong>Status: {{post.status }}</strong></span><br>
-                <a href="{% url 'post_detail' post.id %}">Continue Reading</a>
-            {% endfor %}
+    <body class="bg-secondary-subtle">
+        <div class="card p-2 m-2">
+            <h1 class="text-center">All Posts</h1>
+            
+            <ul>
+                {% for post in posts %}
+                    <li>{{post.id}} - {{ post.title}}</li><br>
+                    <span><strong>Status: {{post.status }}</strong></span><br>
+                    <a href="{% url 'post_detail' post.id %}">Continue Reading</a>
+                {% endfor %}
 
-        </ul>
-    
-    </div>
+            </ul>
+        
+        </div>
+
+      
+    </body>
 {% endblock %}

@@ -6,10 +6,24 @@
 {% endblock %}
 
 {% block content %}
+ <body class="bg-secondary-subtle">
     <h1>signup up</h1>
     <form method="post">
         {% csrf_token %}
         {{ form|crispy }}
-        <input type="submit" value="signup" class="btn btn-success">Singup</input>
+        <input type="submit" value="signup" class="btn btn-success"></input>
     </form>
+
+    <br/>
+
+        <div class="card mb-3">
+            <img src="https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?q=80&w=1199&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title text-center">Life begins at the end of your comfort zone.</h5>
+            <p class="card-text text-center">The biggest adventure you can ever take is to live the life of your dreams.</p>
+           
+        </div>
+        </div>
+
+</body>
 {% endblock %}
