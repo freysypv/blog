@@ -22,21 +22,14 @@ class PostListView(ListView): # GET requestto dysplay a liust of posts
     template_name = "post/list.html"
     # Specifies the model to retrieve data from.
     # model = Post
-
     # Sets the context variable name for the template.
-    
-
     published_status = Status.objects.get(name="published")
     #queryset attribute allow us to seclet data from the db using the model class
     # and also allow us to custmize the data (filter)
-
     queryset = Post.objects.filter(status=published_status).order_by("created_on").reverse()
-
     #context_object_name attribute allow us to change the
     #varieble on how we call it inside of templates
-
     context_object_name = "posts"  
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["post_status"] = "All"       
@@ -65,9 +58,7 @@ class PostDraftListView(ListView):
         context =super().get_context_data(**kwargs)
         context["post_status"] = "Drafts"
         return context
-
-
-       
+ 
 
 class PostDetailView(LoginRequiredMixin, DetailView): # GET Request -> single element (object)
     template_name = "post/detail.html"
